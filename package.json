@@ -1,0 +1,27 @@
+{
+  "name": "survey-form",
+  "version": "1.0.0",
+  "description": "survey form for fcc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec babel-node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsuxlzt/survey-form.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsuxlzt/survey-form/issues"
+  },
+  "homepage": "https://github.com/gsuxlzt/survey-form#readme",
+  "dependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.3"
+  }
+}
