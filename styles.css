@@ -1,5 +1,83 @@
-h1 { 
-    color: red;
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+* {
+  font-family: "Raleway", sans-serif;
+  background: #fafafa;
+  color: #505050;
+}
+
+body {
+  padding: 10px 20px;
+}
+
+input {
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+#title {
+  font-family: "Lato", sans-serif;
+  margin: 36px auto;
+}
+
+#description {
+  margin-bottom: 36px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+#survey-form .subtext--required {
+  color: #505050;
+  font-size: 10px;
+}
+#survey-form .form-group {
+  padding: 10px 20px;
+  margin-bottom: 36px;
+  background: #fff;
+  position: relative;
+  /*
+  input focus animation
+  source: https://codepen.io/xayaraj/pen/amzydG
+  */
+}
+#survey-form .form-group label {
+  display: block;
+  margin-bottom: 8px;
+  background: #fff;
+}
+#survey-form .form-group .input {
+  box-sizing: border-box;
+  font-size: 18px;
+  height: 50px;
+  padding: 10px 0px;
+  position: relative;
+  width: 200px;
+}
+#survey-form .form-group .input:focus {
+  outline: none;
+}
+#survey-form .form-group .input:focus.underline {
+  transform: scale(1);
+}
+#survey-form .form-group .input:focus + .underline {
+  transform: scale(1);
+}
+#survey-form .form-group .underline {
+  background-color: #505050;
+  display: inline-block;
+  height: 2px;
+  position: absolute;
+  bottom: 10px;
+  -webkit-transform: scale(0, 1);
+  transform: scale(0, 1);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  width: 202px;
+  left: 18px;
 }
 
 /*# sourceMappingURL=styles.css.map */

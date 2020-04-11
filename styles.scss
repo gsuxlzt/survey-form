@@ -1,3 +1,112 @@
-h1 {
-    color: blue;
+//imports
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+// variables
+$gray: #fcfcfc;
+$gray-dark: #fafafa;
+$gray-darker: #d0d0d0;
+$gray-darkest: #505050;
+$black: #000;
+$white: #fff;
+
+$padding: 10px 20px;
+$margin: 8px;
+$gap-margin: 36px;
+$header-font: 'Lato', sans-serif;
+$text-font: 'Raleway', sans-serif;
+
+$animate: all 0.2s ease-in-out;
+
+// styles
+
+* {
+    font-family: $text-font;
+    background: $gray-dark;
+    color: $gray-darkest;
 }
+
+body {
+    padding: $padding;
+}
+
+input {
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid $gray-darker;
+}
+
+#title {
+    font-family: $header-font;
+    margin: $gap-margin auto;
+}
+
+#description {
+    margin-bottom: $gap-margin;
+}
+
+.text-center {
+    text-align: center;
+}
+
+#survey-form {
+    .subtext--required {
+        color: $gray-darkest;
+        font-size: 10px;
+    }
+    .form-group {
+        padding: $padding;
+        margin-bottom: $gap-margin;
+        background: $white;
+        position: relative;
+
+        label {
+            display: block;
+            margin-bottom: $margin;
+            background: $white;
+        }
+
+        /*
+        input focus animation
+        source: https://codepen.io/xayaraj/pen/amzydG
+        */
+
+        .input {
+            box-sizing: border-box;
+            font-size: 18px;
+            height: 50px;
+            padding: 10px 0px;
+            position: relative;
+            width: 200px;
+            &:focus {
+                outline: none;
+                &.underline {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        .input:focus+.underline {
+        transform: scale(1);
+        }
+
+        .underline {
+        background-color: $gray-darkest;
+        display: inline-block;
+        height: 2px;
+        position: absolute;
+        bottom: 10px;
+        -webkit-transform: scale(0, 1);
+        transform: scale(0, 1);
+        -webkit-transition: $animate;
+        transition: $animate;
+        width: 202px;
+        left:18px;
+        }
+    }
+}
+
+
+
+
