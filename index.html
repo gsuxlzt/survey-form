@@ -22,15 +22,61 @@
             <p>* Required information</p>
             <div class="form-group">
                 <label id="name-label" for="name">* Name:</label>
-                <input type="text" required name="name" id="name"/>
+                <input type="text" required name="name" id="name" placeholder="Name"/>
             </div>
             <div class="form-group">
                 <label id="email-label" for="email">* Email:</label>
-                <input type="email" required name="email" id="email"/>
+                <input type="email" required name="email" id="email" placeholder="Email"/>
             </div>
             <div class="form-group">
                 <label id="number-label" for="age">Age:</label>
                 <input type="number" name="age" id="number" min="0" max="200"/>
+            </div>
+            <div class="form-group">
+                <p>Gender:</p>
+                <label>
+                    <input type="radio" name="gender" value="male"/>Male
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="female"/>Female
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="not-specified"/>Rather not say
+                </label>
+            </div>
+            <div class="form-group">
+                <label id="number-label" for="age">Current role:</label>
+                <select id="dropdown">
+                    <option value="full-time">Full time</option>
+                    <option value="part-time">Part time</option>
+                    <option value="contractual">Contractual</option>
+                    <option value="unemployed">Unemployed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Skills:</p>
+                <label>
+                    <input type="checkbox" name="skills" value="html"/>HTML
+                </label>
+                <label>
+                    <input type="checkbox" name="skills" value="css"/>CSS
+                </label>
+                 <label>
+                    <input type="checkbox" name="skills" value="javascript"/>Javascript
+                </label>
+                 <label>
+                    <input type="checkbox" name="skills" value="git"/>Git
+                </label>
+                 <label>
+                    <input type="checkbox" name="skills" value="typescript"/>Typescript
+                </label>
+                 <label>
+                    <input type="checkbox" name="skills" value="node"/>Node JS
+                </label>
+            </div>
+            <div class="form-group">
+                <p>Additional information:</p>
+                <textarea name="additional-info" id="additional-info"></textarea>
             </div>
                 <button type="submit">Submit</button>
         </form>
