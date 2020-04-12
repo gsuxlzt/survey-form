@@ -3,15 +3,16 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
 
 // variables
-$gray: #fcfcfc;
-$gray-dark: #fafafa;
-$gray-darker: #d0d0d0;
-$gray-darkest: #505050;
-$black: #000;
-$white: #fff;
+$gray: #eeeeee;
+$gray-darker: #B3AEAB;
+$gray-darkest: #393e46;
+$black: #393e46;
+$white: #f7f7f7;
 
 $padding: 10px 20px;
 $margin: 8px;
+$padding: 8px;
+$offset: 8px;
 $gap-margin: 36px;
 $header-font: 'Lato', sans-serif;
 $text-font: 'Raleway', sans-serif;
@@ -19,22 +20,23 @@ $text-font: 'Raleway', sans-serif;
 $animate: all 0.2s ease-in-out;
 
 // styles
-
-* {
-    font-family: $text-font;
-    background: $gray-dark;
-    color: $gray-darkest;
-}
-
 body {
     padding: $padding;
+    font-family: $text-font;
+    background: $gray;
+    color: $black;
+}
+
+.main {
+    max-width: 780px;
+    margin: 0 auto;
+padding: $padding;
 }
 
 input {
     border: 0;
     outline: 0;
     background: transparent;
-    border-bottom: 1px solid $gray-darker;
 }
 
 #title {
@@ -67,27 +69,26 @@ input {
             background: $white;
         }
 
+        .text-label {
+            margin: 0;
+            padding: $padding 0;
+        }
+
         /*
         input focus animation
         source: https://codepen.io/xayaraj/pen/amzydG
         */
 
-        .input {
+        .text-input {
             box-sizing: border-box;
-            font-size: 18px;
-            height: 50px;
-            padding: 10px 0px;
+            font-size: 14px;
             position: relative;
+            padding: $padding;
             width: 200px;
-            &:focus {
-                outline: none;
-                &.underline {
-                    transform: scale(1);
-                }
-            }
+            border-bottom: 1px solid $gray-darker;
         }
 
-        .input:focus+.underline {
+        .text-input:focus+.underline {
         transform: scale(1);
         }
 
@@ -96,17 +97,135 @@ input {
         display: inline-block;
         height: 2px;
         position: absolute;
-        bottom: 10px;
+        bottom: $offset;
         -webkit-transform: scale(0, 1);
         transform: scale(0, 1);
         -webkit-transition: $animate;
         transition: $animate;
         width: 202px;
-        left:18px;
+        left: $offset;
+        }
+
+        &:last-child {
+            background: $gray;
+            text-align: center;
         }
     }
 }
 
+// select styles
+select {
+    border: 0;
+    background: $white;
+    border-bottom: 1px solid $gray-darker;
+    width: 200px;
 
+    &:focus {
+        outline: none;
+    }
+}
+
+// text area styles
+textarea {
+    border: 1px solid $gray-darker;
+    background: $white;
+    color: $black;
+    font-size: 12px;
+    min-width: 200px;
+    min-height: 50px;
+    padding: $padding;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+// submit button styles
+button[type=submit] {
+    background: $white;
+    border: 1px solid $black;
+    color: $black;
+    padding: $padding;
+    font-size: 14px;
+    font-weight: bold;
+    min-width: 200px;
+    text-align: center; 
+    border-radius: 0;
+}
+
+/*
+    styles for checkbox and radio buttons
+    source: https://codepen.io/jasesmith/pen/EeVmWZ
+*/
+input[type=checkbox],
+input[type=radio] {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: inherit;
+    width: 1em;
+    margin: 0;
+    margin-right: $margin;
+    color: inherit;
+    outline: none;
+    font-family: 'Font Awesome 5 Pro';
+    transition: 300ms ease-out;
+
+    &::after {
+      content: '\f111'; // circle
+      display: inline-block;
+      text-align: center;
+      width: 1em;
+    }
+
+    &:checked::after {
+      font-weight: 900;
+    }
+    &:active {
+      transform: scale(.6);
+    }
+
+    + span {
+      margin-left: .35em;
+    }
+}
+
+input[type=radio]:checked::after {
+    content: '\f192'; // dot-circle
+}
+
+input[type=checkbox]:checked::after {
+    content: '\f058'; // check-circle
+}
+
+// hide number arrows
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+// hide placeholder
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    transparent;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    transparent;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    transparent;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color:    transparent;
+}
 
 

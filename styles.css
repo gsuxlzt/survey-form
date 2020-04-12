@@ -1,20 +1,23 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
-* {
+body {
+  padding: 8px;
   font-family: "Raleway", sans-serif;
-  background: #fafafa;
-  color: #505050;
+  background: #eeeeee;
+  color: #393e46;
 }
 
-body {
-  padding: 10px 20px;
+.main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 8px;
 }
 
 input {
   border: 0;
   outline: 0;
   background: transparent;
-  border-bottom: 1px solid #d0d0d0;
 }
 
 #title {
@@ -31,13 +34,13 @@ input {
 }
 
 #survey-form .subtext--required {
-  color: #505050;
+  color: #393e46;
   font-size: 10px;
 }
 #survey-form .form-group {
-  padding: 10px 20px;
+  padding: 8px;
   margin-bottom: 36px;
-  background: #fff;
+  background: #f7f7f7;
   position: relative;
   /*
   input focus animation
@@ -47,37 +50,155 @@ input {
 #survey-form .form-group label {
   display: block;
   margin-bottom: 8px;
-  background: #fff;
+  background: #f7f7f7;
 }
-#survey-form .form-group .input {
+#survey-form .form-group .text-label {
+  margin: 0;
+  padding: 8px 0;
+}
+#survey-form .form-group .text-input {
   box-sizing: border-box;
-  font-size: 18px;
-  height: 50px;
-  padding: 10px 0px;
+  font-size: 14px;
   position: relative;
+  padding: 8px;
   width: 200px;
+  border-bottom: 1px solid #B3AEAB;
 }
-#survey-form .form-group .input:focus {
-  outline: none;
-}
-#survey-form .form-group .input:focus.underline {
-  transform: scale(1);
-}
-#survey-form .form-group .input:focus + .underline {
+#survey-form .form-group .text-input:focus + .underline {
   transform: scale(1);
 }
 #survey-form .form-group .underline {
-  background-color: #505050;
+  background-color: #393e46;
   display: inline-block;
   height: 2px;
   position: absolute;
-  bottom: 10px;
+  bottom: 8px;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   width: 202px;
-  left: 18px;
+  left: 8px;
+}
+#survey-form .form-group:last-child {
+  background: #eeeeee;
+  text-align: center;
+}
+
+select {
+  border: 0;
+  background: #f7f7f7;
+  border-bottom: 1px solid #B3AEAB;
+  width: 200px;
+}
+select:focus {
+  outline: none;
+}
+
+textarea {
+  border: 1px solid #B3AEAB;
+  background: #f7f7f7;
+  color: #393e46;
+  font-size: 12px;
+  min-width: 200px;
+  min-height: 50px;
+  padding: 8px;
+}
+textarea:focus {
+  outline: none;
+}
+
+button[type=submit] {
+  background: #f7f7f7;
+  border: 1px solid #393e46;
+  color: #393e46;
+  padding: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 0;
+}
+
+/*
+    styles for checkbox and radio buttons
+    source: https://codepen.io/jasesmith/pen/EeVmWZ
+*/
+input[type=checkbox],
+input[type=radio] {
+  position: relative;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  font-size: inherit;
+  width: 1em;
+  margin: 0;
+  margin-right: 8px;
+  color: inherit;
+  outline: none;
+  font-family: "Font Awesome 5 Pro";
+  transition: 300ms ease-out;
+}
+input[type=checkbox]::after,
+input[type=radio]::after {
+  content: "";
+  display: inline-block;
+  text-align: center;
+  width: 1em;
+}
+input[type=checkbox]:checked::after,
+input[type=radio]:checked::after {
+  font-weight: 900;
+}
+input[type=checkbox]:active,
+input[type=radio]:active {
+  transform: scale(0.6);
+}
+input[type=checkbox] + span,
+input[type=radio] + span {
+  margin-left: 0.35em;
+}
+
+input[type=radio]:checked::after {
+  content: "";
+}
+
+input[type=checkbox]:checked::after {
+  content: "";
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: transparent;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: transparent;
+  opacity: 1;
+}
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: transparent;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: transparent;
 }
 
 /*# sourceMappingURL=styles.css.map */

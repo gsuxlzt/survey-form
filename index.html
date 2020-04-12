@@ -9,79 +9,84 @@
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
         />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css"/>
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.2.0/css/all.css" type="text/css">
         <link rel="stylesheet" href="/styles.css" type="text/css"/>
     </head>
     <body>
-        <h1 id="title" class="text-center">FCC Survey Form</h1>
-        <p id="description" class="text-center">A survey form for one of FCC's responsive web design projects. The user stories can be found
-            <a href="https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form" target="_blank">
-                here
-            </a>.
-        </p>
-        <form id="survey-form">
-            <p class="subtext--required">* Required information</p>
-            <div class="form-group">
-                <label id="name-label" for="name">* Name:</label>
-                <input type="text" required name="name" id="name" placeholder="Name" class="input"/>
-                <span class="underline"></span>
-            </div>
-            <div class="form-group">
-                <label id="email-label" for="email">* Email:</label>
-                <input type="email" required name="email" id="email" placeholder="Email" class="input"/>
-                <span class="underline"></span>
-            </div>
-            <div class="form-group">
-                <label id="number-label" for="age">Age:</label>
-                <input type="number" name="age" id="number" min="0" max="200" class="input"/>
-                <span class="underline"></span>
-            </div>
-            <div class="form-group">
-                <p>Gender:</p>
-                <label>
-                    <input type="radio" name="gender" value="male"/>Male
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="female"/>Female
-                </label>
-                <label>
-                    <input type="radio" name="gender" value="not-specified"/>Rather not say
-                </label>
-            </div>
-            <div class="form-group">
-                <label id="number-label" for="age">Current role:</label>
-                <select id="dropdown">
-                    <option value="full-time">Full time</option>
-                    <option value="part-time">Part time</option>
-                    <option value="contractual">Contractual</option>
-                    <option value="unemployed">Unemployed</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <p>Skills:</p>
-                <label>
-                    <input type="checkbox" name="skills" value="html"/>HTML
-                </label>
-                <label>
-                    <input type="checkbox" name="skills" value="css"/>CSS
-                </label>
-                 <label>
-                    <input type="checkbox" name="skills" value="javascript"/>Javascript
-                </label>
-                 <label>
-                    <input type="checkbox" name="skills" value="git"/>Git
-                </label>
-                 <label>
-                    <input type="checkbox" name="skills" value="typescript"/>Typescript
-                </label>
-                 <label>
-                    <input type="checkbox" name="skills" value="node"/>Node JS
-                </label>
-            </div>
-            <div class="form-group">
-                <p>Additional information:</p>
-                <textarea name="additional-info" id="additional-info"></textarea>
-            </div>
-                <button type="submit">Submit</button>
-        </form>
+        <section class="main">
+            <h1 id="title" class="text-center">FCC Survey Form</h1>
+            <p id="description" class="text-center">A survey form for one of FCC's responsive web design projects. The user stories can be found
+                <a href="https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-survey-form" target="_blank">
+                    here
+                </a>.
+            </p>
+            <form id="survey-form">
+                <p class="subtext--required">* Required information</p>
+                <div class="form-group">
+                    <label id="name-label" for="name">*Name:</label>
+                    <input type="text" required name="name" id="name" placeholder="Please enter your name" class="text-input"/>
+                    <span class="underline"></span>
+                </div>
+                <div class="form-group">
+                    <label id="email-label" for="email">*Email:</label>
+                    <input type="email" required name="email" id="email" placeholder="Please enter your email address" class="text-input"/>
+                    <span class="underline"></span>
+                </div>
+                <div class="form-group">
+                    <label id="number-label" for="age">Age:</label>
+                    <input type="number" name="age" id="number" min="0" max="200" class="text-input"/>
+                    <span class="underline"></span>
+                </div>
+                <div class="form-group">
+                    <p class="text-label">Gender:</p>
+                    <label>
+                        <input type="radio" name="gender" value="male"/>Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female"/>Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="not-specified"/>Rather not say
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label id="number-label" for="age">Current role:</label>
+                    <select id="dropdown">
+                        <option value="full-time">Full time</option>
+                        <option value="part-time">Part time</option>
+                        <option value="contractual">Contractual</option>
+                        <option value="unemployed">Unemployed</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <p class="text-label">Skills:</p>
+                    <label>
+                        <input type="checkbox" name="skills" value="html"/>HTML
+                    </label>
+                    <label>
+                        <input type="checkbox" name="skills" value="css"/>CSS
+                    </label>
+                    <label>
+                        <input type="checkbox" name="skills" value="javascript"/>Javascript
+                    </label>
+                    <label>
+                        <input type="checkbox" name="skills" value="git"/>Git
+                    </label>
+                    <label>
+                        <input type="checkbox" name="skills" value="typescript"/>Typescript
+                    </label>
+                    <label>
+                        <input type="checkbox" name="skills" value="node"/>Node JS
+                    </label>
+                </div>
+                <div class="form-group">
+                    <p class="text-label">Additional information:</p>
+                    <textarea name="additional-info" id="additional-info"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
     </body>
 </html>
