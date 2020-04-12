@@ -11,8 +11,9 @@ $white: #f7f7f7;
 
 $padding: 10px 20px;
 $margin: 8px;
+$outer-padding: 12px;
 $padding: 8px;
-$offset: 8px;
+$offset: 12px;
 $gap-margin: 36px;
 $header-font: 'Lato', sans-serif;
 $text-font: 'Raleway', sans-serif;
@@ -28,9 +29,9 @@ body {
 }
 
 .main {
-    max-width: 780px;
+    max-width: 540px;
     margin: 0 auto;
-padding: $padding;
+    padding: $padding;
 }
 
 input {
@@ -58,7 +59,7 @@ input {
         font-size: 10px;
     }
     .form-group {
-        padding: $padding;
+        padding: $outer-padding;
         margin-bottom: $gap-margin;
         background: $white;
         position: relative;
@@ -84,7 +85,7 @@ input {
             font-size: 14px;
             position: relative;
             padding: $padding;
-            width: 200px;
+            width: 100%;
             border-bottom: 1px solid $gray-darker;
         }
 
@@ -102,130 +103,147 @@ input {
         transform: scale(0, 1);
         -webkit-transition: $animate;
         transition: $animate;
-        width: 202px;
+        width: calc(100% - 22px);
         left: $offset;
         }
 
+        // submit button
         &:last-child {
             background: $gray;
             text-align: center;
         }
+
+        // select styles
+        select {
+            border: 0;
+            background: $white;
+            border-bottom: 1px solid $gray-darker;
+            width: 100%;
+            padding: $padding;
+            padding-left: 0;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        // text area styles
+        textarea {
+            border: 1px solid $gray-darker;
+            background: $white;
+            color: $black;
+            font-size: 12px;
+            width: calc(100% - 18px);
+            min-height: 50px;
+            padding: $padding;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        // submit button styles
+        button[type=submit] {
+            background: $white;
+            border: 1px solid $black;
+            color: $black;
+            padding: $padding;
+            font-size: 14px;
+            font-weight: bold;
+            min-width: 200px;
+            text-align: center; 
+            border-radius: 0;
+        }
+
+        /*
+            styles for checkbox and radio buttons
+            source: https://codepen.io/jasesmith/pen/EeVmWZ
+        */
+        input[type=checkbox],
+        input[type=radio] {
+            position: relative;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            font-size: inherit;
+            width: 1em;
+            margin: 0;
+            margin-right: $margin;
+            color: inherit;
+            outline: none;
+            font-family: 'Font Awesome 5 Pro';
+            transition: 300ms ease-out;
+
+            &::after {
+            content: '\f111'; // circle
+            display: inline-block;
+            text-align: center;
+            width: 1em;
+            }
+
+            &:checked::after {
+            font-weight: 900;
+            }
+            &:active {
+            transform: scale(.6);
+            }
+
+            + span {
+            margin-left: .35em;
+            }
+        }
+
+        input[type=radio]:checked::after {
+            content: '\f192'; // dot-circle
+        }
+
+        input[type=checkbox]:checked::after {
+            content: '\f058'; // check-circle
+        }
+
+        // hide number arrows
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+        -moz-appearance: textfield;
+        }
+
+        // hide placeholder
+        ::-webkit-input-placeholder { /* WebKit browsers */
+            color:    transparent;
+        }
+        :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color:    transparent;
+        opacity:  1;
+        }
+        ::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color:    transparent;
+        opacity:  1;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10+ */
+            color:    transparent;
+        }
     }
 }
 
-// select styles
-select {
-    border: 0;
-    background: $white;
-    border-bottom: 1px solid $gray-darker;
-    width: 200px;
+.flex {
+    display: flex;
+    &.space-around {
+        justify-content: space-around;
+    }
 
-    &:focus {
-        outline: none;
+    .flex-group {
+        width: 50%;
+        padding: $padding;
     }
 }
 
-// text area styles
-textarea {
-    border: 1px solid $gray-darker;
-    background: $white;
-    color: $black;
-    font-size: 12px;
-    min-width: 200px;
-    min-height: 50px;
-    padding: $padding;
 
-    &:focus {
-        outline: none;
-    }
-}
-
-// submit button styles
-button[type=submit] {
-    background: $white;
-    border: 1px solid $black;
-    color: $black;
-    padding: $padding;
-    font-size: 14px;
-    font-weight: bold;
-    min-width: 200px;
-    text-align: center; 
-    border-radius: 0;
-}
-
-/*
-    styles for checkbox and radio buttons
-    source: https://codepen.io/jasesmith/pen/EeVmWZ
-*/
-input[type=checkbox],
-input[type=radio] {
-    position: relative;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    font-size: inherit;
-    width: 1em;
-    margin: 0;
-    margin-right: $margin;
-    color: inherit;
-    outline: none;
-    font-family: 'Font Awesome 5 Pro';
-    transition: 300ms ease-out;
-
-    &::after {
-      content: '\f111'; // circle
-      display: inline-block;
-      text-align: center;
-      width: 1em;
-    }
-
-    &:checked::after {
-      font-weight: 900;
-    }
-    &:active {
-      transform: scale(.6);
-    }
-
-    + span {
-      margin-left: .35em;
-    }
-}
-
-input[type=radio]:checked::after {
-    content: '\f192'; // dot-circle
-}
-
-input[type=checkbox]:checked::after {
-    content: '\f058'; // check-circle
-}
-
-// hide number arrows
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-// hide placeholder
-::-webkit-input-placeholder { /* WebKit browsers */
-    color:    transparent;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    transparent;
-   opacity:  1;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    transparent;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color:    transparent;
-}
 
 

@@ -9,7 +9,7 @@ body {
 }
 
 .main {
-  max-width: 780px;
+  max-width: 540px;
   margin: 0 auto;
   padding: 8px;
 }
@@ -38,7 +38,7 @@ input {
   font-size: 10px;
 }
 #survey-form .form-group {
-  padding: 8px;
+  padding: 12px;
   margin-bottom: 36px;
   background: #f7f7f7;
   position: relative;
@@ -46,6 +46,12 @@ input {
   input focus animation
   source: https://codepen.io/xayaraj/pen/amzydG
   */
+  /*
+      styles for checkbox and radio buttons
+      source: https://codepen.io/jasesmith/pen/EeVmWZ
+  */
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
 }
 #survey-form .form-group label {
   display: block;
@@ -61,7 +67,7 @@ input {
   font-size: 14px;
   position: relative;
   padding: 8px;
-  width: 200px;
+  width: 100%;
   border-bottom: 1px solid #B3AEAB;
 }
 #survey-form .form-group .text-input:focus + .underline {
@@ -72,43 +78,42 @@ input {
   display: inline-block;
   height: 2px;
   position: absolute;
-  bottom: 8px;
+  bottom: 12px;
   -webkit-transform: scale(0, 1);
   transform: scale(0, 1);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  width: 202px;
-  left: 8px;
+  width: calc(100% - 22px);
+  left: 12px;
 }
 #survey-form .form-group:last-child {
   background: #eeeeee;
   text-align: center;
 }
-
-select {
+#survey-form .form-group select {
   border: 0;
   background: #f7f7f7;
   border-bottom: 1px solid #B3AEAB;
-  width: 200px;
+  width: 100%;
+  padding: 8px;
+  padding-left: 0;
 }
-select:focus {
+#survey-form .form-group select:focus {
   outline: none;
 }
-
-textarea {
+#survey-form .form-group textarea {
   border: 1px solid #B3AEAB;
   background: #f7f7f7;
   color: #393e46;
   font-size: 12px;
-  min-width: 200px;
+  width: calc(100% - 18px);
   min-height: 50px;
   padding: 8px;
 }
-textarea:focus {
+#survey-form .form-group textarea:focus {
   outline: none;
 }
-
-button[type=submit] {
+#survey-form .form-group button[type=submit] {
   background: #f7f7f7;
   border: 1px solid #393e46;
   color: #393e46;
@@ -119,13 +124,8 @@ button[type=submit] {
   text-align: center;
   border-radius: 0;
 }
-
-/*
-    styles for checkbox and radio buttons
-    source: https://codepen.io/jasesmith/pen/EeVmWZ
-*/
-input[type=checkbox],
-input[type=radio] {
+#survey-form .form-group input[type=checkbox],
+#survey-form .form-group input[type=radio] {
   position: relative;
   appearance: none;
   -webkit-appearance: none;
@@ -139,66 +139,67 @@ input[type=radio] {
   font-family: "Font Awesome 5 Pro";
   transition: 300ms ease-out;
 }
-input[type=checkbox]::after,
-input[type=radio]::after {
+#survey-form .form-group input[type=checkbox]::after,
+#survey-form .form-group input[type=radio]::after {
   content: "";
   display: inline-block;
   text-align: center;
   width: 1em;
 }
-input[type=checkbox]:checked::after,
-input[type=radio]:checked::after {
+#survey-form .form-group input[type=checkbox]:checked::after,
+#survey-form .form-group input[type=radio]:checked::after {
   font-weight: 900;
 }
-input[type=checkbox]:active,
-input[type=radio]:active {
+#survey-form .form-group input[type=checkbox]:active,
+#survey-form .form-group input[type=radio]:active {
   transform: scale(0.6);
 }
-input[type=checkbox] + span,
-input[type=radio] + span {
+#survey-form .form-group input[type=checkbox] + span,
+#survey-form .form-group input[type=radio] + span {
   margin-left: 0.35em;
 }
-
-input[type=radio]:checked::after {
+#survey-form .form-group input[type=radio]:checked::after {
   content: "";
 }
-
-input[type=checkbox]:checked::after {
+#survey-form .form-group input[type=checkbox]:checked::after {
   content: "";
 }
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+#survey-form .form-group input::-webkit-outer-spin-button,
+#survey-form .form-group input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
-/* Firefox */
-input[type=number] {
+#survey-form .form-group input[type=number] {
   -moz-appearance: textfield;
 }
-
-::-webkit-input-placeholder {
+#survey-form .form-group ::-webkit-input-placeholder {
   /* WebKit browsers */
   color: transparent;
 }
-
-:-moz-placeholder {
+#survey-form .form-group :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
   color: transparent;
   opacity: 1;
 }
-
-::-moz-placeholder {
+#survey-form .form-group ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
   color: transparent;
   opacity: 1;
 }
-
-:-ms-input-placeholder {
+#survey-form .form-group :-ms-input-placeholder {
   /* Internet Explorer 10+ */
   color: transparent;
+}
+
+.flex {
+  display: flex;
+}
+.flex.space-around {
+  justify-content: space-around;
+}
+.flex .flex-group {
+  width: 50%;
+  padding: 8px;
 }
 
 /*# sourceMappingURL=styles.css.map */
